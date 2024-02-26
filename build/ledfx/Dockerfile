@@ -1,8 +1,9 @@
-# 2024-01-05: python 3.12 has issues with python aiohttp & mbedtls
-FROM python:3.11-bookworm
+FROM python:3.12-bookworm
 
+# cmake needed to build aubio
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends\
+    apt-get install -y --no-install-recommends \
+        cmake \
         libportaudio2 \
         pulseaudio \
     && rm -rf /var/lib/apt/lists/*
