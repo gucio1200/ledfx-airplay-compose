@@ -38,7 +38,7 @@ jobs:
         id: time
         uses: nanzm/get-time-action@v2.0
         with:
-          format: 'MMDDHHMM'
+          format: 'MMDDHHmm'
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
