@@ -1,9 +1,11 @@
-FROM python:3.12-trixie AS build
+FROM python:3.12-bookworm AS build
 
 # cmake needed to build aubio
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         cmake \
+        gcc \
+        portaudio19-dev \
         libportaudio2 \
         pulseaudio \
     && rm -rf /var/lib/apt/lists/*
@@ -19,7 +21,7 @@ RUN python -m venv venv \
 
 # aubio doesn't properly express its dependency on numpy? pre-install it as a workaround.
 
-FROM python:3.12-slim-trixie AS run
+FROM python:3.12-slim AS run
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
