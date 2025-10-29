@@ -8,6 +8,7 @@ RUN addgroup -g 1000 ledfx \
  && mkdir -p /home/ledfx \
  && chown -R ledfx:ledfx /home/ledfx
 
+RUN mkdir -p /home/ledfx/.config/pulse
 COPY /etc/pulse/system.pa /home/ledfx/.config/pulse/default.pa
 USER ledfx
 
