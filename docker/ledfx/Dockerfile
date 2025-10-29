@@ -25,7 +25,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         cmake \
         libportaudio2 \
-        pulseaudio
+        pulseaudio \
     && rm -rf /var/lib/apt/lists/*
 
 ENV HOME="/home/ledfx"
