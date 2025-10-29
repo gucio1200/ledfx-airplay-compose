@@ -36,7 +36,7 @@ RUN groupadd --gid 1000 ledfx \
 
 WORKDIR "$HOME"
 
-COPY --from=build --chown=1000:1000 /app/.venv /app/.venv
+COPY --from=build --chown=1000:1000 /app/venv /app/venv
 
 USER ledfx
 
