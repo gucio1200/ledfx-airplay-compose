@@ -8,4 +8,4 @@ RUN addgroup -g 1000 ledfx \
 
 USER ledfx
 RUN mkdir -p /home/ledfx/.config/pulse/
-CMD pulseaudio --verbose --exit-idle-time=-1 --system=false --disallow-exit --disallow-module-loading=false --log-target=stderr --disable-shm=yes --load="module-native-protocol-unix auth-anonymous=1 auth-cookie-enabled=0 socket=/tmp/pulseaudio.socket" --load="module-always-sink"
+CMD pulseaudio --verbose --exit-idle-time=-1 --system=false --disallow-exit --disallow-module-loading=false --log-target=stderr --disable-shm=yes --load="module-native-protocol-unix auth-anonymous=1 auth-cookie-enabled=0 socket=$HOME/.config/pulse/pulseaudio.socket" --load="module-always-sink"
