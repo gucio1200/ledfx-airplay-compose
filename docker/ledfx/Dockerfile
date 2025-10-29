@@ -10,11 +10,7 @@ RUN apt-get update && \
         pulseaudio \
     && rm -rf /var/lib/apt/lists/*
 
-
-ENV HOME="/home/ledfx"
-ENV PATH="/opt/.venv/bin:$PATH"
-
-WORKDIR "$HOME"
+WORKDIR /app
 
 RUN python -m venv venv \
  && venv/bin/pip install numpy ledfx
