@@ -40,7 +40,7 @@ COPY --from=build --chown=1000:1000 /app/venv /app/venv
 
 USER ledfx
 
-COPY start.sh /app/start.sh
+COPY ./start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
 CMD ["/app/start.sh"]
