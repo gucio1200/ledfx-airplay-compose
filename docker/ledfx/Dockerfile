@@ -27,7 +27,7 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 ENV HOME="/home/ledfx"
-ENV PATH="/opt/.venv/bin:$PATH"
+ENV PATH="/app/venv/bin:$PATH"
 
 RUN groupadd --gid 1000 ledfx \
   && useradd --uid 1000 --gid 1000 --create-home --home-dir "$HOME" ledfx \
