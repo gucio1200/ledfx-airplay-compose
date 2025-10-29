@@ -1,5 +1,5 @@
 FROM alpine
-RUN apk add --no-cache pulseaudio
+RUN apk add --no-cache pulseaudio libpulse
 
 RUN addgroup -g 1000 ledfx \
  && adduser -D -u 1000 -G ledfx -s /bin/sh -h /home/ledfx ledfx \
